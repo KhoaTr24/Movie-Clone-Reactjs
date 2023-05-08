@@ -1,0 +1,171 @@
+@import "../../app.scss";
+ .navbar{
+  width: 100%;
+  color: var(--white-color);
+  font-size: 18px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background: linear-gradient(to top, transparent 0%, var(--main-color) 70%);
+
+  &.scrolled{
+    background-color: var(--main-color);
+  }
+  
+  .container{
+    padding: 0px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+
+    .left{
+      display: flex;
+      align-items: center;
+      
+      img{
+        height: 45px;
+        margin-right: 40px;
+
+        @include mobile {
+          display: none;
+        }
+      }
+
+      span{
+        margin-right: 20px;
+        cursor: pointer;
+        @include table {
+          display: none;
+        }
+
+        &.navbarmainLinks{
+          @include table {
+            display:block;
+          }
+        }
+
+
+        // Hiệu ứng nút menu
+        position: relative;
+        border: none;
+        background: none;
+        text-transform: uppercase;
+        transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+        transition-duration: 400ms;
+        transition-property: color;
+        color: white;
+        &:focus,
+        &:hover {
+          color: var(--blue-color-light);
+        }
+
+        &:focus:after,
+        &:hover:after {
+          width: 100%;
+          left: 0%;
+        }
+
+        &:after {
+          content: "";
+          pointer-events: none;
+          bottom: -2px;
+          left: 50%;
+          position: absolute;
+          width: 0%;
+          height: 2px;
+          background-color: var(--blue-color-light);
+          transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+          transition-duration: 400ms;
+          transition-property: width, left;
+        }
+      }
+    }
+
+    .right{
+      display: flex;
+      align-items: center;
+
+      .icon{
+        margin: 0px 15px;
+        cursor: pointer;
+      }
+
+      .SearchIcon{
+        cursor: pointer;
+      }
+
+      img{
+        width: 35px;
+        height: 35px;
+        border-radius: 5px;
+        object-fit: cover;
+        cursor: pointer;
+      }
+
+      .profile{
+        .options{
+          display: none;
+          background-color: var(--main-color);
+          border-radius: 5px;
+        }
+
+        span{
+          font-size: 20px;
+          padding: 10px;
+          cursor: pointer;
+          text-decoration: none;
+          color: white;
+        }
+
+        &:hover{
+          .options{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            border-radius: 8px;
+
+            .group {
+              display: flex;
+              line-height: 28px;
+              align-items: center;
+              position: relative;
+              max-width: 190px;
+            }
+            .input {
+              width: 100%;
+              height: 40px;
+              line-height: 28px;
+              padding: 1px;
+              padding-left: 50px;
+              border: 2px solid transparent;
+              border-radius: 8px;
+              outline: none;
+              background-color: var(--main-color);
+              color: var(--white-color);
+              transition: .3s ease;
+            }
+            .input::placeholder {
+              color: gainsboro;
+            }
+            .input:focus, input:hover {
+              outline: none;
+              border-color: var(--blue-color-light);
+              background-color: var(--main-color);
+              box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+            }
+            .icon {
+              position: absolute;
+              left: 5px;
+              fill: var(--blue-color-light);
+              width: 16px;
+              height: 16px;
+            }
+
+          }
+        }
+      }
+      
+    }
+  }
+}

@@ -1,0 +1,155 @@
+.home{
+  background-color: var(--main-color);
+  overflow: hidden;
+  color: white;
+  text-decoration: none;
+}
+.list {
+  width: 100%;
+  margin-top: 10px;
+  height: 300px;
+
+  .listTitle {
+    color: var(--white-color);
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 50px;
+    height: 300px;
+  }
+ 
+
+  .wrappers {
+    position: relative;
+    .sliderArrow {
+      width: 50px;
+      height: 100%;
+      background-color: rgb(22, 22, 22, 0.5);
+      color: var(--white-color);
+      position: absolute;
+      z-index: 99;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      cursor: pointer;
+      text-decoration: none;
+      &:hover{
+        color: var(--blue-color-light);
+      }
+
+      &.left {
+        left: 0;
+      }
+
+      &.right {
+        right: 0;
+      }
+    }
+    .container {
+      margin-left: 50px;
+      display: flex;
+      margin-top: 10px;
+      width: max-content;
+      transform: translateX(0px);
+      transition: all 1s ease;
+    }
+  }
+}
+
+.listItem {
+  width: 300px;
+  height: 190px;
+  border-radius: 15px;
+  background-color: var(--main-color);
+  margin-right: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  color: var(--white-color);
+  
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  video {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &:hover {
+    width: 325px;
+    height: 375px;
+    position: absolute;
+    top: -150px;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.07);
+    box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.07);
+    border-radius: 5px;
+    border: 2px solid var(--blue-color-light);
+
+    img {
+      height: 140px;
+    }
+
+    .itemInfo {
+      display: flex;
+      flex-direction: column;
+      padding: 5px;
+
+      .icons {
+        display: flex;
+        margin-bottom: 10px;
+        color: white;
+
+        .icon {
+          border: 2px solid var(--white-color);
+          padding: 5px;
+          border-radius: 50%;
+          margin-right: 10px;
+          font-size: 16px;
+          color: white;
+
+          &:hover{
+            border: 2px solid var(--blue-color-light);
+            color: var(--blue-color-light);
+          }
+          .listTitle {
+            color: var(--white-color);
+            font-size: 20px;
+            font-weight: 500;
+            margin-left: 50px;
+          }
+        }
+      }
+      .itemInfoTop {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        color: gray;
+
+        .limit {
+          border: 1px solid gray;
+          padding: 1px 3px;
+          margin: 0 10px;
+        }
+      }
+
+      .desc {
+        font-size: 13px;
+        margin-bottom: 10px;
+        color: white;
+      }
+
+      .genre {
+        font-size: 14px;
+        color: lightgray;
+      }
+    }
+  }
+}

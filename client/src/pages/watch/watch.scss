@@ -1,0 +1,68 @@
+.watch {
+  width: 100%;
+  background-color: var(--main-color);
+  color: #fff;
+  overflow: hidden;
+
+  .back {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: var(--white-color);
+    cursor: pointer;
+    z-index: 2;
+
+    &:hover{
+      color: var(--blue-color-light);
+      background-color: var(--gray-color);
+      border: none;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2px 4px;
+    }
+  }
+  .movie{
+    width: 1900px;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .container {
+    .video {
+      width: 1280;
+      height: 720;
+      margin: 50px auto;
+      display: flex;
+      align-items: center;
+    }
+
+    .para{
+      margin: 10px;
+      padding: 10px;
+      h1 h2 {
+        margin-top: 20px;
+        font-weight: 400;
+      }
+      p {
+        line-height: 25px;
+        margin-top: 20px;
+      }
+    }
+    .soical {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      margin: 30px 0;
+      border-top: 2px solid #575757;
+      border-bottom: 1px solid #575757;
+      padding: 8px 0;
+    }
+    .soical img {
+      margin-left: 10px;
+    }
+  }
+}

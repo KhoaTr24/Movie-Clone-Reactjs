@@ -1,0 +1,97 @@
+@import "../../app.scss";
+
+.featured{
+  height: 100vh;
+  position: relative;
+
+  .category{
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--gray-color);
+    display: flex;
+    align-items: center;
+
+    select{
+      cursor: pointer;
+      background-color: var(--main-color);
+      border: 1px solid var(--blue-color-light);
+      color: var(--white-color);
+      margin-left: 20px;
+      padding: 5px;
+    }
+
+  }
+
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .info{
+    width: 35%;
+    position: absolute;
+    left: 50px;
+    bottom: 100px;
+    color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+
+    img{
+      width: 350px;
+    }
+
+    .desc{
+      margin: 20px 0px;
+
+      @include mobile{
+        width: 60vw;
+      }
+    }
+
+    .buttons{
+      display: flex;
+
+      button{
+        padding: 10px 20px;
+        border: none;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 500;
+        margin-right: 15px;
+        cursor: pointer;
+
+        span{
+          margin-left: 5px;
+        }
+
+        &.play{
+          background-color: var(--blue-color);
+          color: var(--white-color);
+          border: 1px solid var(--blue-color);
+          &:hover{
+            color: var(--blue-color-light);
+            background-color: var(--gray-color);
+            border: 1px solid var(--blue-color-light);
+          }
+        }
+  
+        &.more{
+          background-color: var(--white-color);
+          color: var(--gray-color);
+          &:hover{
+            color: var(--white-color);
+            background-color: var(--gray-color);
+            
+          }
+        }
+      }
+    }
+  }
+}
